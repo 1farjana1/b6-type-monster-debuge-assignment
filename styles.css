@@ -183,7 +183,7 @@ button {
   top: 0;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   .box-container {
     padding: 0 20px;
     width: 100%;
@@ -191,10 +191,36 @@ button {
 
   .card {
     flex-direction: column;
+    text-align: center;
   }
 }
 
-@media screen and (min-width:768px) and (max-width:1024px) {
+@media screen and (min-width:768px) and (max-width:992px) {
+  #histories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .card {
+    display: block;
+    padding: 30px 20px;
+    margin: 10px 0px;
+    text-align: center;
+
+  }
+
+  .card h3 {
+    color: #0e82d4e9;
+  }
+
+  p {
+    padding-top: 5px;
+  }
+
+}
+
+@media screen and (min-width:992px) and (max-width:1024px) {
   #histories {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
