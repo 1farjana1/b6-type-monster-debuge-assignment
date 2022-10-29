@@ -1,6 +1,6 @@
 const display = document.getElementById("display");
 const question = document.getElementById("question");
-const startBtn = document.getElementById("start");
+const startBtn = document.getElementById("starts");
 const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
@@ -15,7 +15,9 @@ let questionText = "";
 fetch("./texts.json")
   .then((res) => res.json())
   .then((data) => {
+    // console.log(data)
     questionText = data[Math.floor(Math.random() * data.length)];
+    // console.log(questionText)
     question.innerHTML = questionText;
   });
 
@@ -105,12 +107,11 @@ const start = () => {
 
   let count = 3;
   countdownOverlay.style.display = "flex";
-
   const startCountdown = setInterval(() => {
     countdownOverlay.innerHTML = `<h1>${count}</h1>`;
 
     // finished timer
-    if (count == 0) {
+    if (count === 0) {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "flex";
@@ -118,13 +119,15 @@ const start = () => {
 
       clearInterval(startCountdown);
       startTime = new Date().getTime();
+      countdownOverlay.style.display = "none";
+
     }
     count--;
   }, 1000);
 };
 
 // START Countdown
-document.getElementById('starts').addEventListener("click", start);
+startBtn.addEventListener("click", start);
 
 // If history exists, show it
 displayHistory();
@@ -132,7 +135,7 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent = (currentTime - startTime) / 1000;
+  const timeSpent = parseInt((currentTime - startTime) / 1000);
 
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
