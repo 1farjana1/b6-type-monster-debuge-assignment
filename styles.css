@@ -220,7 +220,7 @@ button {
 
 }
 
-@media screen and (min-width:992px) and (max-width:1024px) {
+@media screen and (min-width:992px) and (max-width:1900px) {
   #histories {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -236,7 +236,7 @@ button {
   }
 
   .card h3 {
-    color: #0e82d4e9;
+    color: #ffffff;
   }
 
   p {
