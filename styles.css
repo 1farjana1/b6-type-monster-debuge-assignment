@@ -193,3 +193,18 @@ button {
     flex-direction: column;
   }
 }
+
+@media (min-width:768px) {
+  .box-container {
+    padding: 0px 20px;
+    width: 100%;
+
+  }
+
+  .card {
+    /* display: flex;
+    flex-direction: row; */
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+  }
+}
