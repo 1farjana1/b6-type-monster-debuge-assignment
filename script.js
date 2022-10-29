@@ -15,9 +15,7 @@ let questionText = "";
 fetch("./texts.json")
   .then((res) => res.json())
   .then((data) => {
-    // console.log(data)
     questionText = data[Math.floor(Math.random() * data.length)];
-    // console.log(questionText)
     question.innerHTML = questionText;
   });
 
